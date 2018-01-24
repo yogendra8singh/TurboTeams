@@ -19,7 +19,7 @@ namespace TurboCAR.GetTeams.Repository
         {
             try
             {
-                ConnectionMultiplexer Connection = ConnectionMultiplexer.Connect("52.163.252.25:6379");
+                ConnectionMultiplexer Connection = ConnectionMultiplexer.Connect("localhost");
                 IDatabase cache = Connection.GetDatabase();
                 var returnRequests = JsonConvert.DeserializeObject<List<Team>>(cache.StringGet("TurboCAR.TeamsList"));
                 return returnRequests;
