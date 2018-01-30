@@ -26,14 +26,14 @@ namespace TurboCAR.GetTeams.Api.Tests
             teams = JsonConvert.DeserializeObject<List<Team>>("[{\"id\":101,\"name\":\"11A\",\"department\":\"CP98PCL\"},{\"id\":102,\"name\":\"11B\",\"department\":\"CP30ACT\"}]");
         }
 
-        [Fact]
-        public async Task GetAsyncTest()
-        {
-            repository.GetAsync().Returns(Task.Run(() => teams));
-            var result = controller.Get();
-            int actual = result.Result.Count;
-            Assert.True(actual == teams.Count);
-        }
+        //[Fact]
+        //public async Task GetAsyncTest()
+        //{
+        //    repository.GetAsync().Returns(Task.Run(() => teams));
+        //    var result = controller.Get();
+        //    int actual = result.Result.Count;
+        //    Assert.True(actual == teams.Count);
+        //}
 
         [Fact]
         public async Task GetAsyncWithParameterTest()
